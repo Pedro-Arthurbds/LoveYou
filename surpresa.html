@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Te amo ❤️</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #000000, #2b0a3d, #7e1e8d, #ff4da6);
+      color: white;
+      text-align: center;
+      padding: 30px 15px; /* reduzir padding lateral em telas pequenas */
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      /* evita scroll horizontal por causa dos corações */
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: block;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffb3ec;
+    }
+
+    .contador {
+      font-size: 1.25rem;
+      color: #ffe6fa;
+      word-wrap: break-word;
+    }
+
+    .spotify {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Ajustar o iframe para responsividade */
+    .spotify iframe {
+      width: 100%;
+      max-width: 300px;
+      height: 80px;
+      border-radius: 12px;
+    }
+
+    .mensagem {
+      padding: 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #ffe6fa;
+      backdrop-filter: blur(8px);
+      text-align: justify;
+      border-top: 2px solid white;
+      padding-top: 10px;
+    }
+
+    /* Estilo dos corações animados */
+    .coracao {
+      position: fixed;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.8;
+      animation: subir 4s ease-in forwards;
+      filter: drop-shadow(0 0 3px #ff4da6);
+      width: 24px;
+      height: 24px;
+    }
+
+    .coracao svg {
+      width: 100%;
+      height: 100%;
+      fill: #ff4da6;
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(-150vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* --- Media Queries para dispositivos móveis --- */
+    @media (max-width: 576px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .contador {
+    font-size: 1rem;
+  }
+
+  .mensagem {
+    font-size: 0.9rem;
+    margin: 30px 10px;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  /* Ajusta o carousel para ocupar quase toda a tela no celular */
+  #carouselFotos {
+    max-width: 100% !important;
+    width: 95vw;
+    margin: 0 auto 20px;
+  }
+
+  /* Imagens dentro do carousel para ocupar toda a largura e altura com corte proporcional */
+  #carouselFotos img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  /* Aumenta e posiciona melhor as setas para toque */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 2.5rem 2.5rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 576px) {
+  #carouselFotos {
+    max-width: 100% !important;
+    width: 95vw;
+    margin: 0 auto 20px;
+    height: auto; /* deixa altura automática */
+  }
+
+  #carouselFotos img {
+    width: 100%;
+    height: auto; /* altura automática */
+    object-fit: contain; /* mostra a imagem inteira, sem cortar */
+
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="spotify">
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/5U28PY9MekLyCBYtLHGQpe?utm_source=generator" width="300" height="80"
+      frameborder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <div id="carouselFotos" class="carousel slide mx-auto" style="max-width: 300px;" data-bs-ride="carousel" data-bs-interval="1500">
+    <div class="carousel-inner rounded-4 shadow">
+      <div class="carousel-item active">
+        <img src="img/foto1.jpg" class="d-block w-100" alt="Foto 1" />
+      </div>
+      <div class="carousel-item">
+        <img src="img/foto2.jpg" class="d-block w-100" alt="Foto 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="img/foto3.jpg" class="d-block w-100" alt="Foto 3" />
+      </div>
+      <div class="carousel-item">
+        <img src="img/foto4.jpg" class="d-block w-100" alt="Foto 4" />
+      </div>
+      <div class="carousel-item">
+        <img src="img/foto5.jpg" class="d-block w-100" alt="Foto 5" />
+      </div>
+      <div class="carousel-item">
+        <img src="img/foto6.jpg" class="d-block w-100" alt="Foto 6" />
+      </div>
+      <div class="carousel-item">
+        <img src="img/foto7.png" class="d-block w-100" alt="Foto 7" />
+      </div>
+    </div>
+
+    <!-- Controles (opcional) -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"
+        style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%;"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos" data-bs-slide="next">
+      <span class="carousel-control-next-icon"
+        style="background-color: rgba(0, 0, 0, 0.5); border-radius: 50%;"></span>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+
+  <h1>Eu te amo há:</h1>
+  <div class="contador" id="contador"></div>
+
+  <div class="mensagem">
+    <p>
+      A cada novo dia, meu coração transborda ainda mais carinho e admiração por você.
+      O seu sorriso ilumina a minha vida, e em cada abraço seu, encontro o meu lugar no mundo.
+      Você é a inspiração dos meus pensamentos mais felizes, e tudo ao seu lado ganha mais cor, sentido e beleza.
+      Te amo profundamente, hoje e para sempre.
+    </p>
+  </div>
+
+  <script>
+    const inicioRelacionamento = new Date("2023-12-01T00:12:30");
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diferenca = agora - inicioRelacionamento;
+
+      const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365.25));
+      const meses = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
+      const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+
+      const restanteHoras = diferenca % (1000 * 60 * 60 * 24);
+      const horas = Math.floor(restanteHoras / (1000 * 60 * 60));
+      const minutos = Math.floor((restanteHoras % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((restanteHoras % (1000 * 60)) / 1000);
+
+      document.getElementById("contador").textContent =
+        `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    // Função para criar corações animados
+    function criarCoracao() {
+      const coracao = document.createElement("div");
+      coracao.classList.add("coracao");
+
+      // Posição horizontal aleatória
+      coracao.style.left = Math.random() * window.innerWidth + "px";
+
+      // Tamanho aleatório entre 15 e 30 px
+      const tamanho = 15 + Math.random() * 15;
+      coracao.style.width = tamanho + "px";
+      coracao.style.height = tamanho + "px";
+
+      // SVG do coração embutido no div (formato perfeito)
+      coracao.innerHTML = `
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 
+               4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09 
+               C13.09 3.81 14.76 3 16.5 3 
+               19.58 3 22 5.42 22 8.5 
+               c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  `;
+
+      document.body.appendChild(coracao);
+
+      setTimeout(() => {
+        coracao.remove();
+      }, 4000);
+    }
+
+    // Criar corações a cada 300 ms
+    setInterval(criarCoracao, 300);
+  </script>
+
+</body>
+
+</html>
